@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/form_script.js"></script>
+</head>
+<body>
+<form method="post" th:action="@{/get-info}" action="confirm" th:object="${parentForm}">
+    <div class="form-block" id="form_block[0]">
+        <!-- Closeボタン ()-->
+        <span class="close" title="Close" style="display: none;">-</span>
+
+        <p>Name:<input type="text" name="accountList[0].name" id="accountList[0].name"/></p>
+        <p>Email:
+            <input type="text" name="accountList[0].email" id="accountList[0].email"/>
+        </p>
+        <p>age:<input type="text" name="accountList[0].age" id="accountList[0].age"/></p>
+    </div>
+
+    <!-- Addボタン -->
+    <div class="form-block">
+        <span class="add" title="Add">+</span>
+    </div>
+
+    <input type="submit" id="submit" value="登録">
+</form>
+</body>
+</html>
